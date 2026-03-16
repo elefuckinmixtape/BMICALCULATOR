@@ -23,18 +23,12 @@ namespace BMICALCULATOR
                 Console.WriteLine($" > {output}"); 
             };
         }
-        public static async void Wait(double waitTime)
-        {
-            var task = Task.Run(async delegate
-            {
-                await Task.Delay(TimeSpan.FromSeconds(waitTime));
-            }); task.Wait();
-        }
+        // Fake loading system
         public static void FakeLoad()
         {
             int loadTicks = 9; // Amount of times it will do a load cycle (every 4 is a full animated cycle)
             int currentDotTicks = 0; // Amount of current "." on loading text
-            string currentText = $"Loading";
+            string currentText = $"Loading"; // Current text to display
             Print($"{currentText}");
             for (int i = 0; i < loadTicks; i++)
             {
@@ -44,7 +38,7 @@ namespace BMICALCULATOR
                     Print($"{currentText}");
                     currentText = $"{currentText}.";
                     currentDotTicks++;
-                    Wait(1);
+                    Thread.Sleep(TimeSpan.FromSeconds(1));
                 } else
                 {
                     Console.SetCursorPosition(13, Console.CursorTop - 1); Console.WriteLine($"\b\b\b\b     ");
@@ -55,17 +49,18 @@ namespace BMICALCULATOR
                     currentDotTicks = 0;
                 }
             }
-            Wait(1);
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             Print($"LOADING COMPLETE!");
-
         }
+        // "Main method
         public static void Main(string[] args)
         {
             // Start of "Main"
             Print($"BMI CALCULATOR INITIALIZING..{Environment.NewLine}>       PLEASE WAIT...");
-            //await Task.Delay(TimeSpan.FromSeconds(2)); FakeLoad();
-            Wait(.5); FakeLoad();
-
+            Thread.Sleep(TimeSpan.FromSeconds(.5)); FakeLoad();
+            // Continue "Main" method
+            Thread.Sleep(TimeSpan.FromSeconds(2));
+            Print($"Welcome to the BMI Calculator!");
 
         }
     }
