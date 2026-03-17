@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,13 +10,14 @@ namespace BMICALCULATOR
     {
         public double doubleHeight;
         public double doubleWeight;
+        public bool isWaitingForInput;
 
     }
     internal class Program
     {
         public static void Print(string output)
         {
-            if (!string.Contains(output, $"Loading", StringComparison.OrdinalIgnoreCase))
+            if (!output.Contains("Loading", StringComparison.OrdinalIgnoreCase))
             { // output not Loading
                 Console.WriteLine($"> {output}");
             } else 
@@ -52,15 +54,22 @@ namespace BMICALCULATOR
             Thread.Sleep(TimeSpan.FromSeconds(1));
             Print($"LOADING COMPLETE!");
         }
-        // "Main method
+        // Main method
         public static void Main(string[] args)
         {
             // Start of "Main"
             Print($"BMI CALCULATOR INITIALIZING..{Environment.NewLine}>       PLEASE WAIT...");
             Thread.Sleep(TimeSpan.FromSeconds(.5)); FakeLoad();
             // Continue "Main" method
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            Print($"Welcome to the BMI Calculator!");
+            Thread.Sleep(TimeSpan.FromSeconds(2)); Print($"Welcome to the BMI Calculator!");
+            Thread.Sleep(TimeSpan.FromSeconds(1)); Print($"This program will calculate your average BMI.");
+            Thread.Sleep(TimeSpan.FromSeconds(.5)); Print($"To start off, please input your height");
+            Console.Write($"> ");
+            while(!double.TryParse(Console.ReadLine(), out double doubleWeight))
+            {
+                Print($" > ERROR! input is not a double value please input something like this: 180 or 150.6.");
+                Console.Write($"> ");
+            }
 
         }
     }
