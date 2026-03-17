@@ -15,7 +15,7 @@ namespace BMICALCULATOR
     {
         public static void Print(string output)
         {
-            if (!output.Contains("Loading"))
+            if (!string.Contains(output, $"Loading", StringComparison.OrdinalIgnoreCase))
             { // output not Loading
                 Console.WriteLine($"> {output}");
             } else 
