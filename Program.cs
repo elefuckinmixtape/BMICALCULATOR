@@ -71,11 +71,7 @@ namespace BMICALCULATOR
             }
             Thread.Sleep(TimeSpan.FromSeconds(1)); Print($"Perfect! your 'Height' is : {doubleHeight.ToString()}?");
             Thread.Sleep(TimeSpan.FromSeconds(1)); Print($"If you have made a mistake please input 'Yes'. If not please input 'No'.");
-            Console.Write($"> "); while()
-            {
-                Print($" > ERROR! Input does not match requested inputs, please try again using 'Yes' or 'No'");
-                Console.Write($"> ");
-            }
+            Console.Write($"> "); 
            
 
         }
