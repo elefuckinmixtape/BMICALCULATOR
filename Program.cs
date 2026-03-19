@@ -9,6 +9,7 @@ namespace BMICALCULATOR
     public static class Variables
     // Variables class/storage
     {
+        public static string currentInput;
         public static double doubleHeight;
         public static double doubleWeight;
     }
@@ -63,15 +64,22 @@ namespace BMICALCULATOR
             // Continue "Main" method
             Print(2, $"Welcome to the BMI Calculator!");
             Print(1, $"This program will calculate your average BMI.");
-            Print(1, $"To start off, please input your height..");
-            Console.Write($"> "); while(!double.TryParse(Console.ReadLine(), out doubleHeight))
+            Print(1, $"To start off, please input your height in meters..");
+            do
             {
-                Print(0, $" > ERROR! input is not a double value please input something like this: 180 or 150.6.");
+                Print(0, $" > ERROR! input is not a double value please input something like this: '1.70' or '1.80'.");
                 Console.Write($"> ");
-            }
-            Print(1, $"Perfect! your 'Height' is : {doubleHeight.ToString()}?");
+            } while (!double.TryParse(currentInput, out doubleHeight));
+            Print(1, $"Perfect! your 'Height' is : {doubleHeight.ToString()} in meters?");
             Print(1, $"If you have made a mistake please input 'Yes'. If not please input 'No'.");
-            Console.Write($"> "); 
+            Console.Write($"> "); currentInput = Console.ReadLine();
+            do
+            {
+                Print(0, $" > ERROR!! input doesn't match requested inputs, please try again this time using 'Yes' or 'No'.");
+                currentInput = Console.ReadLine();
+            } while (!currentInput.Equals("Yes", StringComparison.OrdinalIgnoreCase) || !currentInput.Equals("No", StringComparison.OrdinalIgnoreCase));
+            
+
            
 
         }
