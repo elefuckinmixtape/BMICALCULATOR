@@ -40,8 +40,8 @@ namespace BMICALCULATOR
                     if (currentDotTicks < 4)
                     {
                         Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Print(0, $"{currentText}");
                         currentText = $"{currentText}.";
+                        Print(0, $"{currentText}");
                         currentDotTicks++;
                         Thread.Sleep(TimeSpan.FromSeconds(1));
                     }
@@ -65,19 +65,7 @@ namespace BMICALCULATOR
             Print(2, $"Welcome to the BMI Calculator!");
             Print(1, $"This program will calculate your average BMI.");
             Print(1, $"To start off, please input your height in meters..");
-            do
-            {
-                Print(0, $" > ERROR! input is not a double value please input something like this: '1.70' or '1.80'.");
-                Console.Write($"> ");
-            } while (!double.TryParse(currentInput, out doubleHeight));
-            Print(1, $"Perfect! your 'Height' is : {doubleHeight.ToString()} in meters?");
-            Print(1, $"If you have made a mistake please input 'Yes'. If not please input 'No'.");
-            Console.Write($"> "); currentInput = Console.ReadLine();
-            do
-            {
-                Print(0, $" > ERROR!! input doesn't match requested inputs, please try again this time using 'Yes' or 'No'.");
-                currentInput = Console.ReadLine();
-            } while (!currentInput.Equals("Yes", StringComparison.OrdinalIgnoreCase) || !currentInput.Equals("No", StringComparison.OrdinalIgnoreCase));
+            
             
 
            
