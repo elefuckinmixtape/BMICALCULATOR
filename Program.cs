@@ -15,7 +15,15 @@ namespace BMICALCULATOR
     }
     internal class Program
     {
-        public static void Print(int delay, string output)
+        static void GetInput()
+        {
+            static void ValidateInput(string input)
+            {
+                 
+            }
+
+        }
+        static void Print(int delay, string output)
         {
             Thread.Sleep(TimeSpan.FromSeconds(delay));
             if (!output.Contains("Loading", StringComparison.OrdinalIgnoreCase))
@@ -27,7 +35,7 @@ namespace BMICALCULATOR
             };
         }
         // Main method
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             static void FakeLoad()
             {
