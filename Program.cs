@@ -21,6 +21,7 @@ namespace BMICALCULATOR
             {
                  
             }
+            string tempInput = Console.ReadLine();
 
         }
         static void Print(int delay, string output)
