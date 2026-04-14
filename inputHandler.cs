@@ -1,16 +1,15 @@
 using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace BMICALCULATOR
 {
     public class inputHandler
     {
  
-        private void ValidateInput()
+        private void ValidateInput(string input)
         {
             
         }
+        
         public void GetInput()
         {
             
