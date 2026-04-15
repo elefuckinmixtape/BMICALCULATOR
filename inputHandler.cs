@@ -4,15 +4,34 @@ namespace BMICALCULATOR
 {
     public class inputHandler
     {
- 
-        private void ValidateInput(string input)
+        string currentInput;
+        bool isValid;
+        private Type GetType(string input)
         {
             
         }
-        
-        public void GetInput()
+        private bool ValidateInput(string input)
         {
-            
+            int tryInt;
+            double tryDouble;
+            if (!string.IsNullOrEmpty(input))
+            { 
+                
+                return true;
+               
+            }
+            else
+            {
+                
+                return false;
+            }
+        }
+
+        public string GetInput()
+        {
+            currentInput = Console.ReadLine();
+            isValid = ValidateInput(currentInput);
+            return currentInput;
         }
 
         
