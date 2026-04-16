@@ -18,7 +18,7 @@ namespace BMICALCULATOR
             Console.WriteLine($"This program will calculate your Body Mass Index (BMI)"); Thread.Sleep(TimeSpan.FromSeconds(1));
             Console.WriteLine($"Please enter your height in meters, Ex: '1.75'");
             // Get input :3
-            currentInput = inputHandler.GetInput();
+            currentInput = inputHandler.GetInput(new string[] {"Yes", "No"});
 
             Console.WriteLine($"Next, please enter your weight in kilograms, Ex: '70.5'");
             
