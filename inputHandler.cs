@@ -1,39 +1,39 @@
 using System;
+using System.ComponentModel.Design;
+using System.Reflection.Metadata.Ecma335;
 
 namespace BMICALCULATOR
 {
     public class inputHandler
     {
-        string currentInput;
         bool isValid;
-        private Type GetType(string input)
+        private void ValidateInput(string input)
         {
-            
-        }
-        private bool ValidateInput(string input)
-        {
-            int tryInt;
             double tryDouble;
-            if (!string.IsNullOrEmpty(input))
-            { 
-                
-                return true;
-               
-            }
-            else
+            int tryInt;
+            
+            if (!string.IsNullOrEmpty(input)) // Check if "input" has is not empty
             {
+                isValid = true;
                 
-                return false;
-            }
+                return;
+            } 
+            isValid = false;
+            
         }
 
         public string GetInput()
         {
-            currentInput = Console.ReadLine();
-            isValid = ValidateInput(currentInput);
+            string currentInput = Console.ReadLine();
+            ValidateInput(currentInput);
+            while (!isValid)
+            {
+                Console.WriteLine($"INVALID INPUT! Please try again."); Thread.Sleep(TimeSpan.FromSeconds(.4));
+                currentInput = Console.ReadLine();
+                ValidateInput(currentInput);
+            }
             return currentInput;
-        }
 
-        
+        } 
     }
 }
