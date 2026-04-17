@@ -7,31 +7,35 @@ namespace BMICALCULATOR
 {
     public class inputHandler
     {
-        string[] allowedInputs;
+        private string[] _allowedInputs;
         bool isValid;
-        private void ValidateInput(string input)
+        string finalType;
+        string currentErrorMessage;
+        private void ValidateInput(string input, string requestedType)
         {
             // Temp try variables
             double tryDouble;
             int tryInt;
+            
+            while (!string.IsNullOrEmpty(input)) // Check if "input" is not null or empty    
+            {// "input" is not null or empty
 
-            while (!string.IsNullOrEmpty(input)) // Check if "input" is not null or empty
-                // "input" is not null or empty
-            {
-                if (double.TryParse(input, out tryDouble))
-                    // "input" is a "double"
-                {
+                if (double.TryParse(input, out tryDouble) && requestedType == "double")
+                {// "input" is a "double" and "requestedType" == "double"
+                    finalType = requestedType;
                     isValid = true;
                     return;
                 } 
-                if (int.TryParse(input, out tryInt))
-                    // "input" is a "int"
-                {
-                    isValid = true;
-                    return;
+                else if (requestedType == "string" && _allowedInputs != null && _allowedInputs.Length > 0)
+                {// "requestedType == "string"
+                    finalType = requestedType;
+                    foreach (string i in _allowedInputs)
+                    {
+                        Console.WriteLine(i);
+                    }
                 }
-                // "input" is a "string"
-                
+                // "input" is a invalid
+                isValid = false;
                 return;
             } 
             // "input" is null or empty
@@ -39,16 +43,16 @@ namespace BMICALCULATOR
             
         }
 
-        public string GetInput()
+        public string GetInput(string requestedType, string[] allowedInputs)
         {
-            
+            if (allowedInputs != null && allowedInputs.Length > 0) { _allowedInputs = allowedInputs; };
             string currentInput = Console.ReadLine();
-            ValidateInput(currentInput);
+            ValidateInput(currentInput, requestedType);
             while (!isValid)
             {
                 Console.WriteLine($"INVALID INPUT! Please try again."); Thread.Sleep(TimeSpan.FromSeconds(.2));
                 currentInput = Console.ReadLine();
-                ValidateInput(currentInput);
+                ValidateInput(currentInput, requestedType);
             }
             return currentInput;
 
