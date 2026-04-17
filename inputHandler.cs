@@ -21,11 +21,17 @@ namespace BMICALCULATOR
                 if (double.TryParse(input, out tryDouble))
                     // "input" is a "double"
                 {
-
+                    isValid = true;
+                    return;
+                } 
+                if (int.TryParse(input, out tryInt))
+                    // "input" is a "int"
+                {
+                    isValid = true;
                     return;
                 }
                 // "input" is a "string"
-                isValid = true;
+                
                 return;
             } 
             // "input" is null or empty
@@ -33,19 +39,9 @@ namespace BMICALCULATOR
             
         }
 
-        public string GetInput(params string[] allowedInput)
+        public string GetInput()
         {
-            if (allowedInput != null) 
-            {
-                int totalAllowedInputs = 0;
-
-                foreach (string i in allowedInput)
-                {
-                    totalAllowedInputs++;
-                    allowedInputs = new string[] { i };
-                    Console.WriteLine(allowedInputs[]);
-                }
-            }
+            
             string currentInput = Console.ReadLine();
             ValidateInput(currentInput);
             while (!isValid)
