@@ -13,7 +13,7 @@ namespace BMICALCULATOR
             // Temp try variables
             double tryDouble;
             int tryInt;
-            
+           
             while (!string.IsNullOrEmpty(input)) // Check if "input" is not null or empty    
             {// "input" is not null or empty
 
