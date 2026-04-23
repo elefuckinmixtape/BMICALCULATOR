@@ -20,23 +20,22 @@ namespace BMICALCULATOR
                 if (double.TryParse(input, out tryDouble) && requestedType == "double")
                 {// "input" is a "double" and "requestedType" == "double"
                     finalType = requestedType;
-                    isValid = true;
-                    return;
+                    isValid = true; return;
                 } 
                 else if (requestedType == "string" && _allowedInputs != null && _allowedInputs.Length > 0)
                 {// "requestedType == "string"
                     finalType = requestedType;
                     foreach (string i in _allowedInputs)
                     {
-                        Console.WriteLine(i);
+                        if (!string.Equals(input, i, StringComparison.OrdinalIgnoreCase)) { continue; }
+                        isValid = true; return;
                     }
                 }
                 // "input" is a invalid
-                isValid = false;
-                return;
+                isValid = false; return;
             } 
             // "input" is null or empty
-            isValid = false;
+            isValid = false; return;
             
         }
 

@@ -13,7 +13,6 @@ namespace BMICALCULATOR
             double height;
             double weight;
             string[] allowedInputs;
-
             string currentInput;
             inputHandler inputHandler = new inputHandler();
 
@@ -21,7 +20,9 @@ namespace BMICALCULATOR
             Console.WriteLine($"===== BMI Calculator ====="); Thread.Sleep(TimeSpan.FromSeconds(1.5));
             Console.WriteLine($"This program will calculate your Body Mass Index (BMI)"); Thread.Sleep(TimeSpan.FromSeconds(1));
             Console.WriteLine($"Please enter your height in meters, Ex: '1.75'");
-            currentInput = inputHandler.GetInput();
+            allowedInputs = new string[] { "Yes", "No" };
+            currentInput = inputHandler.GetInput("string", allowedInputs);
+            
             Console.WriteLine($"Perfect! Your height is {currentInput}? Please input 'Yes' or 'No'");
 
             Console.WriteLine($"Next, please enter your weight in kilograms, Ex: '70.5'");
