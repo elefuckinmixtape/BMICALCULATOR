@@ -68,18 +68,11 @@ namespace BMICALCULATOR
 
             if (string.Equals(currentInput, "No", StringComparison.OrdinalIgnoreCase))
             {
+                Console.WriteLine($"You have entered the input '{currentInput}', please enter the last requested input before confirmation.");
                 requestedType = lastRequestedType; _allowedInputs = lastAllowedInputs;
-                bool running = true;
-                while (running)
-                {
-
-                }
+                
             }
-            while (string.Equals(currentInput, "No", StringComparison.OrdinalIgnoreCase))
-            {
-                currentInput = Console.ReadLine();
-                ValidateInput(currentInput, requestedType); 
-            }
+            
             lastRequestedType = requestedType; lastAllowedInputs = _allowedInputs;
             return currentInput;
 

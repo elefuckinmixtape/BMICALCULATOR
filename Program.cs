@@ -1,21 +1,32 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using static BMICALCULATOR.inputHandler;
+using static BMICALCULATOR.promptHandler;
 
 namespace BMICALCULATOR
 {
     internal class Program
     {
-        // Main method
+        private static class c_AllowedInputs
+        {
+            private static string[] YesNo = new string[] { "Yes", "No" };
+        }
         static void Main(string[] args)
         {
-            inputHandler inputHandler = new inputHandler();
-            // Vars
-            double heightD;
-            double weightD;
 
-            string currentInput;
-            string[] allowedInputs = new string[] { "Yes", "No" }; // If currentInput is a "string"
+            inputHandler inputHandler = new inputHandler();
+            promptHandler promptHandler = new promptHandler();
+
+
+            // Vars.
+                // Input vars.
+            string currentInput; // Current input.
+            string[] allowedInputs; // If "currentInput" is a "string" then use this list of allowed inputs.
+            
+                // Confirmed vars.
+            double d_Height; // Confirmed height.
+            double d_Weight; // Confirmed weight.
 
             // Start of "Main"
             Console.WriteLine($"===== BMI Calculator ====="); Thread.Sleep(TimeSpan.FromSeconds(1.5));
