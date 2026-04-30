@@ -10,6 +10,9 @@ namespace BMICALCULATOR.inputNamespace
     }
     public class inputHandler
     {
-        
+        public void GetData(string prompt)
+        {
+
+        }
     }
 }

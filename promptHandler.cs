@@ -15,6 +15,6 @@ namespace BMICALCULATOR.promptNamespace
     }
     public class promptHandler
     {
-        
+        public 
     }
 }
