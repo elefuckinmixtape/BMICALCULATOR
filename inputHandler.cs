@@ -2,17 +2,11 @@ using System;
 
 
 
-namespace BMICALCULATOR.inputNamespace 
-{ 
-    class tempVars
-    {
-
-    }
+namespace BMICALCULATOR
+{
     public class inputHandler
     {
-        public void GetData(string prompt)
-        {
+        // TempVars
 
-        }
     }
 }

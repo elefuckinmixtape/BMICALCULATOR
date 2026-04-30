@@ -7,14 +7,10 @@
 // WHY? :
 // To hopefully have a way to go back on prompts without a bunch of if statements :>.
 
-namespace BMICALCULATOR.promptNamespace
+namespace BMICALCULATOR
 {
-    class tempVars
-    {
-
-    }
     public class promptHandler
     {
-        public 
+        
     }
 }
