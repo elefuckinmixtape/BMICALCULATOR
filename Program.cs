@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
+
 using static BMICALCULATOR.promptList;
-using static BMICALCULATOR.inputHandler;
-using static BMICALCULATOR.promptHandler;
+
+using BMICALCULATOR.inputNamespace;
+using BMICALCULATOR.promptNamespace;
 
 namespace BMICALCULATOR
 {
@@ -16,8 +16,8 @@ namespace BMICALCULATOR
         static void Main(string[] args)
         {
             // Handlers.
-            inputHandler inputHandler = new inputHandler();
-            promptHandler promptHandler = new promptHandler();
+            inputNamespace.inputHandler inputHandler = new inputNamespace.inputHandler();
+            promptNamespace.promptHandler promptHandler = new promptNamespace.promptHandler();
             
             
 

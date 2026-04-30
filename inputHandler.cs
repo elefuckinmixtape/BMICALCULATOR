@@ -1,7 +1,13 @@
 using System;
 
-namespace BMICALCULATOR
-{
+
+
+namespace BMICALCULATOR.inputNamespace 
+{ 
+    class tempVars
+    {
+
+    }
     public class inputHandler
     {
         
