@@ -11,6 +11,12 @@ namespace BMICALCULATOR
 {
     public class promptHandler
     {
-        
+        // Temp Vars
+        private string currentPrompt;
+        private float currentDelayTime;
+        public void ProcessData(string promptData, float delayTime)
+        {
+            currentPrompt = promptData;
+        }
     }
 }
