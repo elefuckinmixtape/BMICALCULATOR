@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 // GOAL :
 // Validate and print given "inputs" with optional delay.
@@ -11,11 +12,16 @@ namespace BMICALCULATOR
 {
     public class promptHandler
     {
-        // Temp Vars
+        // Fields
         private string currentPrompt;
         private float currentDelayTime;
+
+        public string _currentPrompt { get { return currentPrompt; } private set { if (!string.IsNullOrEmpty(currentPrompt)) { _currentPrompt = value; } } }
+
         public void ProcessData(string promptData, float delayTime)
         {
+            if (string.IsNullOrEmpty(promptData)) { return; }
+            // "promptData" is not null or empty
             currentPrompt = promptData;
         }
     }
