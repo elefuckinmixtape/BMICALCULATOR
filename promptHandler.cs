@@ -16,7 +16,8 @@ namespace BMICALCULATOR
         private string currentPrompt;
         private float currentDelayTime;
 
-        public string _currentPrompt { get { return currentPrompt; } private set { if (!string.IsNullOrEmpty(currentPrompt)) { _currentPrompt = value; } } }
+        // Chudoids
+        public string _currentPrompt { get { return currentPrompt; } set { if (!string.IsNullOrEmpty(currentPrompt)) { _currentPrompt = value; } } }
 
         public void ProcessData(string promptData, float delayTime)
         {
