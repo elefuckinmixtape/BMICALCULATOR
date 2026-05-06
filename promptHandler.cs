@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
 
 // GOAL :
@@ -16,14 +17,28 @@ namespace BMICALCULATOR
         private string currentPrompt;
         private float currentDelayTime;
 
-        // Chudoids
-        public string _currentPrompt { get { return currentPrompt; } set { if (!string.IsNullOrEmpty(currentPrompt)) { _currentPrompt = value; } } }
-
-        public void ProcessData(string promptData, float delayTime)
-        {
-            if (string.IsNullOrEmpty(promptData)) { return; }
-            // "promptData" is not null or empty
-            currentPrompt = promptData;
+        // Properties
+        public string _currentPrompt 
+        { get { return currentPrompt; } 
+            set 
+            { 
+                if (!string.IsNullOrEmpty(value)) 
+                { 
+                    _currentPrompt = value; 
+                }
+            } 
         }
+        public float _currentDelayTime 
+        { get { return currentDelayTime; } 
+            set 
+            { if (value.ToString() != null) 
+                { 
+                    currentDelayTime = value; 
+                } else 
+                { currentDelayTime = 0f; 
+                }
+            } 
+        }
+
     }
 }
