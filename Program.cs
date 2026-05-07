@@ -1,21 +1,34 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using BMICALCULATOR;
 
 namespace BMICALCULATOR
 {
     internal class Program
     {
         // TempVars
-        
+        private string currentInput;
 
-        static void Main(string[] args)
+        private double D_Height;
+        private double D_Weight;
+
+        void PRINT(string toPrint, float delay)
         {
-            // Handlers
-            inputHandler inputHandler = new inputHandler();
-            promptHandler promptHandler = new promptHandler();
-            
+            string P_PrintMessage;
+            float P_Delay;
 
+            if (!string.IsNullOrEmpty(toPrint))
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+        static void Main(string[] args)
+        {   
+            // Start :>
+            
         }
     }
 }
