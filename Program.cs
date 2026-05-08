@@ -16,6 +16,7 @@ namespace BMICALCULATOR
 
         static void PRINT(string toPrint, float delay)
         {
+            // TempVars
             string P_PrintMessage;
             float P_Delay;
 
@@ -66,6 +67,24 @@ namespace BMICALCULATOR
             if (!IsValid) { return null; }
             return R_Input;
 
+        }
+        
+        string GETINPUT()
+        {
+            // TempVars
+            string tmp_currentInput;
+
+            double D_TryParse;
+
+            tmp_currentInput = Console.ReadLine();
+            if (double.TryParse(tmp_currentInput, out D_TryParse))
+            {
+
+            }
+            else if (!string.IsNullOrEmpty(tmp_currentInput))
+            {
+
+            }
         }
         static void Main(string[] args)
         {
