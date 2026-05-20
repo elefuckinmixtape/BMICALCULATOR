@@ -86,6 +86,7 @@ namespace BMICALCULATOR
             PRINT($"Please wait a moment while your 'BMI' is being calculated.", 1f);
             F_TotalBMI = D_Weight / Math.Pow(D_Height, 2f);
             PRINT($"Your total 'BMI' is : {F_TotalBMI}", 2f);
+
         }
     }
 }
